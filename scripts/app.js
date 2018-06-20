@@ -16,7 +16,7 @@ if(!window.indexedDB){
      showRecords();
  }
  
- function addRecords(){
+ function addData(){
      var box = document.getElementById("data").value;
    var transaction = db.transaction(["tasks"],"readwrite");
    var objectStore = transaction.objectStore("tasks");
@@ -26,6 +26,7 @@ if(!window.indexedDB){
      objectStore.add(obj);
    transaction.oncomplete = function(obj) {
      console.log("Transaction Successful.");
+       window.location.href = "index.html";
    };
  
    transaction.onerror = function(obj) {
