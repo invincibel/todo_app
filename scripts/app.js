@@ -42,9 +42,12 @@ if(!window.indexedDB){
         index.openCursor().onsuccess = function(e){
             var cursor = e.target.result;
             if(cursor){
-                output+=cursor.value.id;
-                output+="<spam contenteditable='true'>"+cursor.value.name+"</spam>";
-                output+="<br>";
+                // output+=cursor.value.id;
+                output+="<h1 class='name'>"
+                output+=cursor.value.name;
+                output+="<spam class='right'>";
+                output+="<a href='' id="+cursor.value.id +">Delete</a>";
+                output+="</spam></h1>";
                 cursor.continue();
             }
           var p = document.getElementById("paste");
