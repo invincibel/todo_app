@@ -91,6 +91,8 @@ body {
     border: none;
     outline: none;
     cursor: pointer; }
+.header #butRefresh {
+    background: url(../images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
      background: url(../images/ic_add_white_24px.svg) center center no-repeat; } 
 
@@ -134,4 +136,16 @@ input[type=submit]{
     margin-left: 5%;
     margin-top: 2em;
     cursor: pointer;
+}
+.wallpaper{
+    position: fixed;
+    top: 10%;
+    background: white;
+    width: 80%;
+    left: 10%;
+}
+.right{
+    float: right;
+   font-size: 20px;
+    font-style: italic;
 }
