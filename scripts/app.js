@@ -46,7 +46,7 @@ if(!window.indexedDB){
                 output+="<h1 class='name'>"
                 output+=cursor.value.name;
                 output+="<spam class='right'>";
-                output+="<a href='' id="+cursor.value.id +">Delete</a>";
+                output+="<a href='' onclick= 'removeTask("+cursor.value.id+")'>Delete</a>";
                 output+="</spam></h1>";
                 cursor.continue();
             }
@@ -62,9 +62,20 @@ if(!window.indexedDB){
      function makeVisible(){
          var box1 = document.getElementsByClassName("container");
          box1[0].style.visibility = "visible";
+         var box2 = document.getElementById("data");
+         box2.focus();
          console.log('making visible');
      }
 function changeNothing(){
     var box1 = document.getElementsByClassName("container");
          box1[0].style.visibility = "hidden";
+}
+function removeTask(id){
+    var transaction = db.transaction(["tasks"],"readwrite");
+   var objectStore = transaction.objectStore("tasks");
+    var request = objectStore.delete(id);
+    request.onsuccess = function(){
+        console.log('customer'+id+'deleted');
+        window.location.href = "index.html";
+    }
 }
