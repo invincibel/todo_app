@@ -5,7 +5,8 @@ var filesToCache = [
     'index.html',
     'cssfile/1.css',
     'scripts/app.js',
-    
+    'images/ic_add_white_24px.svg',
+    'images/ic_refresh_white_24px.svg'
 ];
 self.addEventListener('install',function(event){
    console.log('sw install');
